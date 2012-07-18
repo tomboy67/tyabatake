@@ -1,0 +1,11 @@
+Barcode/barcode
+Bluetooth/bluetooth
+Event/event
+Image/image
+Navbar/navbar
+Nfc/nfc
+Ringtones/ringtones
+Signature/signature
+Tabbar/tabbar
+Toolbar/toolbar
+Webview/webview

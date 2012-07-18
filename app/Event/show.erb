@@ -1,0 +1,81 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @event[Rho::RhoEvent::TITLE] %></h1>
+    <a href="<%= url_for :action => :list %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      戻る
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @event[Rho::RhoEvent::ID] %>" class="ui-btn-right" data-icon="star">
+      編集
+    </a>
+  </div>
+
+  <div data-role="content">
+    <div data-role="collapsible" data-theme="b">
+      <h3>基本情報</h3>
+      <ul data-role="listview">
+        <li>
+          <div class="itemLabel">タイトル</div>
+          <div class="itemValue"><%= @event[Rho::RhoEvent::TITLE] %></div>
+        </li>
+
+        <li>
+          <div class="itemLabel">場所</div>
+          <div class="itemValue"><%= @event[Rho::RhoEvent::LOCATION] %></div>
+        </li>
+
+        <li>
+          <div class="itemLabel">メモ</div>
+          <div class="itemValue"><%= @event[Rho::RhoEvent::NOTES] %></div>
+        </li>
+
+        <li>
+          <div class="itemLabel">開始日</div>
+          <div class="itemValue"><%= @event[Rho::RhoEvent::START_DATE] %></div>
+        </li>
+
+        <li>
+          <div class="itemLabel">終了日</div>
+          <div class="itemValue"><%= @event[Rho::RhoEvent::END_DATE] %></div>
+        </li>
+
+        <li>
+          <div class="itemLabel">キャンセル</div>
+          <div class="itemValue"><%= @event[Rho::RhoEvent::CANCELED] %></div>
+        </li>
+
+        <li>
+          <div class="itemLabel">主催者</div>
+          <div class="itemValue"><%= @event[Rho::RhoEvent::ORGANIZER] %></div>
+        </li>
+
+        <li>
+          <div class="itemLabel">最終変更日</div>
+          <div class="itemValue"><%= @event[Rho::RhoEvent::LAST_MODIFIED] %></div>
+        </li>
+      </ul>
+    </div>
+
+    <div data-role="collapsible" data-theme="b">
+      <h3>繰り返し</h3>
+      <ul data-role="listview">
+        <li>
+          <div class="itemLabel">繰り返し</div>
+          <div class="itemValue"><%= @event[Rho::RhoEvent::RECURRENCE][Rho::RhoEvent::RECURRENCE_FREQUENCY] unless blank?(@event[Rho::RhoEvent::RECURRENCE]) %></div>
+        </li>
+
+        <li>
+          <div class="itemLabel">間隔</div>
+          <div class="itemValue"><%= @event[Rho::RhoEvent::RECURRENCE][Rho::RhoEvent::RECURRENCE_INTERVAL] unless blank?(@event[Rho::RhoEvent::RECURRENCE]) %></div>
+        </li>
+
+        <li>
+          <div class="itemLabel">終了日</div>
+          <div class="itemValue"><%= @event[Rho::RhoEvent::RECURRENCE][Rho::RhoEvent::RECURRENCE_END] unless blank?(@event[Rho::RhoEvent::RECURRENCE]) %></div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,21 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>イベント編集</h1>
+    <a href="<%= url_for :action => :show, :id => @event[Rho::RhoEvent::ID] %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      キャンセル
+    </a>
+    <a href="<%= url_for :action => :delete, :id => @event[Rho::RhoEvent::ID] %>" class="ui-btn-right" data-icon="delete" data-direction="reverse">
+      削除
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="event[<%= Rho::RhoEvent::ID %>]" value="<%= @event[Rho::RhoEvent::ID] %>"/>
+      <%= render(:partial => "form") %>
+      <input type="submit" value="更新する"/>
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,190 @@
+<div data-role="collapsible" data-theme="b">
+  <h3>iOS用入力項目</h3>
+
+  <div data-role="fieldcontain">
+    <label for="contact[prefix]" class="fieldLabel">敬称(前)</label>
+    <input type="text" id="contact[prefix]" name="contact[prefix]" <%= placeholder("Prefix") %> value="<%= @contact["prefix"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[middle_name]" class="fieldLabel">ミドルネーム</label>
+    <input type="text" id="contact[middle_name]" name="contact[middle_name]" <%= placeholder("ミドルネーム") %> value="<%= @contact["middle_name"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[suffix]" class="fieldLabel">敬称(後)</label>
+    <input type="text" id="contact[suffix]" name="contact[suffix]" <%= placeholder("Suffix") %> value="<%= @contact["suffix"] %>" />
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[nickname]" class="fieldLabel">ニックネーム</label>
+    <input type="text" id="contact[nickname]" name="contact[nickname]" <%= placeholder("ニックネーム") %>  value="<%= @contact["nickname"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[birthday]" class="fieldLabel">誕生日(YYYY-MM-DD)</label>
+    <input type="text" id="contact[birthday]" name="contact[birthday]" <%= placeholder("誕生日") %>  value="<%= @contact["birthday"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[anniversary]" class="fieldLabel">記念日(YYYY-MM-DD)</label>
+    <input type="text" id="contact[anniversary]" name="contact[anniversary]" <%= placeholder("記念日") %>  value="<%= @contact["anniversary"] %>" />
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[created]" class="fieldLabel">作成日(YYYY-MM-DD)</label>
+    <input type="text" id="contact[created]" name="contact[created]" <%= placeholder("作成日") %>  value="<%= @contact["created"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[updated]" class="fieldLabel">更新日(YYYY-MM-DD)</label>
+    <input type="text" id="contact[updated]" name="contact[updated]" <%= placeholder("更新日") %> value="<%= @contact["updated"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[job_title]" class="fieldLabel">役職</label>
+    <input type="text" id="contact[job_title]" name="contact[job_title]" <%= placeholder("JobTitle") %> value="<%= @contact["job_title"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[assistant_name]" class="fieldLabel">秘書名</label>
+    <input type="text" id="contact[assistant_name]" name="contact[assistant_name]" <%= placeholder("assistant_name") %> value="<%= @contact["assistant_name"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[assistant_number]" class="fieldLabel">秘書電話番号</label>
+    <input type="text" id="contact[assistant_number]" name="contact[assistant_number]" <%= placeholder("assistant_number") %> value="<%= @contact["assistant_number"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[spouse_name]" class="fieldLabel">配偶者名</label>
+    <input type="text" id="contact[spouse_name]" name="contact[spouse_name]" <%= placeholder("配偶者名") %> value="<%= @contact["spouse_name"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[person_note]" class="fieldLabel">メモ</label>
+    <input type="text" id="contact[person_note]" name="contact[person_note]" <%= placeholder("メモ") %> value="<%= @contact["person_note"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[home_email_address]" class="fieldLabel">自宅E-メール</label>
+    <input type="text" id="contact[home_email_address]" name="contact[home_email_address]" <%= placeholder("自宅E-メール") %> value="<%= @contact["home_email_address"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[other_email_address]" class="fieldLabel">その他E-メール</label>
+    <input type="text" id="contact[other_email_address]" name="contact[other_email_address]" <%= placeholder("その他E-メール") %> value="<%= @contact["other_email_address"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[home_page]" class="fieldLabel">ホームページURL</label>
+    <input type="text" id="contact[home_page]" name="contact[home_page]" <%= placeholder("ホームページURL") %> value="<%= @contact["home_page"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[main_number]" class="fieldLabel">(主)電話番号</label>
+    <input type="text" id="contact[main_number]" name="contact[main_number]" <%= placeholder("(主)電話番号") %> value="<%= @contact["main_number"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[pager_number]" class="fieldLabel">ポケットベル番号</label>
+    <input type="text" id="contact[pager_number]" name="contact[pager_number]" <%= placeholder("ポケットベル番号") %> value="<%= @contact["pager_number"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[home_fax]" class="fieldLabel">自宅FAX</label>
+    <input type="text" id="contact[home_fax]" name="contact[home_fax]" <%= placeholder("自宅FAX") %> value="<%= @contact["home_fax"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[work_fax]" class="fieldLabel">会社FAX</label>
+    <input type="text" id="contact[work_fax]" name="contact[work_fax]" <%= placeholder("会社FAX") %> value="<%= @contact["work_fax"] %>"/>
+  </div>
+</div>
+
+<div data-role="collapsible" data-theme="b">
+  <h3>仕事用住所追加項目</h3>
+
+  <div data-role="fieldcontain">
+    <label for="contact[coutry_1]" class="fieldLabel">国名</label>
+    <input type="text" id="contact[coutry_1]" name="contact[coutry_1]" <%= placeholder("国名") %> value="<%= @contact["coutry_1"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[zip_1]" class="fieldLabel">郵便番号</label>
+    <input type="text" id="contact[zip_1]" name="contact[zip_1]" <%= placeholder("郵便番号") %> value="<%= @contact["zip_1"] %>"/>
+  </div>
+  
+  <div data-role="fieldcontain">
+    <label for="contact[state_1]" class="fieldLabel">都道府県</label>
+    <input type="text" id="contact[state_1]" name="contact[state_1]" <%= placeholder("都道府県") %> value="<%= @contact["state_1"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[city_1]" class="fieldLabel">市区町村区</label>
+    <input type="text" id="contact[city_1]" name="contact[city_1]" <%= placeholder("市区町村区") %> value="<%= @contact["city_1"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[street_address_1]" class="fieldLabel">住所</label>
+    <input type="text" id="contact[street_address_1]" name="contact[street_address_1]" <%= placeholder("住所") %> value="<%= @contact["street_address_1"] %>"/>
+  </div>
+</div>
+
+<div data-role="collapsible" data-theme="b">
+  <h3>自宅用住所追加項目</h3>
+
+  <div data-role="fieldcontain">
+    <label for="contact[coutry_2]" class="fieldLabel">国名</label>
+    <input type="text" id="contact[coutry_2]" name="contact[coutry_2]" <%= placeholder("国名") %> value="<%= @contact["coutry_2"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[zip_2]" class="fieldLabel">郵便番号</label>
+    <input type="text" id="contact[zip_2]" name="contact[zip_2]" <%= placeholder("郵便番号") %> value="<%= @contact["zip_2"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[state_2]" class="fieldLabel">都道府県</label>
+    <input type="text" id="contact[state_2]" name="contact[state_2]" <%= placeholder("都道府県") %> value="<%= @contact["state_2"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[city_2]" class="fieldLabel">市区町村区</label>
+    <input type="text" id="contact[city_2]" name="contact[city_2]" <%= placeholder("市区町村区") %> value="<%= @contact["city_2"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[street_address_2]" class="fieldLabel">住所</label>
+    <input type="text" id="contact[street_address_2]" name="contact[street_address_2]" <%= placeholder("住所") %> value="<%= @contact["street_address_2"] %>"/>
+  </div>
+</div>
+
+<div data-role="collapsible" data-theme="b">
+  <h3>その他住所追加項目</h3>
+
+  <div data-role="fieldcontain">
+    <label for="contact[country_3]" class="fieldLabel">国名</label>
+    <input type="text" id="contact[country_3]" name="contact[country_3]" <%= placeholder("国名") %> value="<%= @contact["country_3"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[zip_3]" class="fieldLabel">郵便番号</label>
+    <input type="text" id="contact[zip_3]" name="contact[zip_3]" <%= placeholder("郵便番号") %> value="<%= @contact["zip_3"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[state_3]" class="fieldLabel">都道府県</label>
+    <input type="text" id="contact[state_3]" name="contact[state_3]" <%= placeholder("都道府県") %> value="<%= @contact["state_3"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[city_3]" class="fieldLabel">市区町村区</label>
+    <input type="text" id="contact[city_3]" name="contact[city_3]" <%= placeholder("市区町村区") %> value="<%= @contact["city_3"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[street_address_3]" class="fieldLabel">住所</label>
+    <input type="text" id="contact[street_address_3]" name="contact[street_address_3]" <%= placeholder("住所") %> value="<%= @contact["street_address_3"] %>"/>
+  </div>
+</div>

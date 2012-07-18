@@ -1,0 +1,41 @@
+<div data-role="page" data-theme="b">
+
+	<div data-role="header" data-position="inline">
+    <h1>電話帳一覧</h1>
+    <a href="<%= url_for(:action => :index) %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+      メニューへ
+    </a>
+	</div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      <% case System::get_property('platform')
+        when "APPLE" %>
+          <% @contacts.each do |key, contact| %>
+            <li>
+              <a href="<%= url_for :action => :show, :id => contact["id"] %>">
+                <%= contact["last_name"] %> <%= contact["first_name"] %>
+              </a>
+            </li>
+          <% end %>
+      <% when "ANDROID" %>
+        <% @contacts.each do |key, contact| %>
+          <li>
+            <a href="<%= url_for :action => :show, :id => contact["id"] %>">
+              <%= contact["display_name"] %>
+            </a>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+
+  <div data-role="footer">
+    <% if @prev_page %>
+      <a href="<%= url_for(:action => :paginate, :query => {:page => @prev_page}) %>" class="ui-btn-left" data-icon="arrow-l" >前</a>
+    <% end %>
+    <% if @next_page %>
+      <a href="<%= url_for(:action => :paginate, :query => {:page => @next_page}) %>" class="ui-btn-right" data-icon="arrow-r">次</a>
+    <% end %>
+  </div>
+</div>

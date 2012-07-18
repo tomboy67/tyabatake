@@ -1,0 +1,25 @@
+<div data-role="page" data-theme="b">  
+	<div data-role="header" data-position="inline">
+    <h1>GPS機能</h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back">
+      GPS機能一覧
+    </a>
+	</div>
+
+  <div data-role="content">
+    <div>経度: <span class="geoLat"><%= @lat.to_s %></span></div>
+    <div>緯度: <span class="geoLng"><%= @lng.to_s %></span></div>
+    <p>Google Maps APIを使ったサンプルです。</p>
+    <div id="map_canvas" style="width:100%; height:500px"></div>
+    <form>
+    <p>
+    住所：<input type="text" id="address" size="50" value="" />
+    </p>
+    </form>
+
+    <script type="text/javascript">
+      initialize(<%= @lat %>,<%= @lng %>);
+    </script>
+      
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div data-role="page" data-theme="b">
+
+  <div data-role="header" data-position="inline">
+    <h1>署名(サイン)機能</h1>
+    <a href="<%= Rho::RhoConfig.start_path %>" class="ui-btn-left" data-icon="home" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+        機能リストへ
+    </a>
+  </div>
+
+  <div data-role="content">
+  <a href="<%= url_for(:action => :take_signature) %>" data-role="button">署名する</a>
+  <a href="<%= url_for(:action => :signature_inline) %>" data-role="button">署名する(インライン)</a>
+    <% @signatures.each do |signature| %>
+      <img src="<%= Rho::RhoApplication::get_blob_path(signature.signature_uri) %>" width="250px" height="250px"/>
+    <% end %>
+  </div>
+
+</div>

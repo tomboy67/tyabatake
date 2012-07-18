@@ -1,0 +1,16 @@
+<div data-role="page" data-theme="b">  
+  <div data-role="header" data-position="inline">
+    <h1>GPS機能</h1>
+    <a href="<%= Rho::RhoConfig.start_path %>" class="ui-btn-left" data-icon="home">
+      機能リストへ
+    </a>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      <li><a href="<%= url_for :action => :show_google %>">Google APIとの連携</a></li>
+      <li><a href="<%= url_for :action => :show_rhomap %>">Rhodesの距離計算とMap表示機能</a></li>
+    </ul>
+  </div>
+
+</div>

@@ -1,0 +1,21 @@
+<div data-role="page" data-theme="b">
+
+	<div data-role="header" data-position="inline">
+    <h1>Nfc機能(ピアツーピア)</h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+      Nfcトップへ
+    </a>
+	</div>
+
+  <div data-role="content">
+    <form method="GET" action="<%= url_for :action => :push_nfc %>">
+      <div id="form_string">
+       <label for="string">送信する文字</label>
+       <input type="text" id="string" name="string" value="Hello World;"/>
+      </div>
+      <div id="form_submit">
+        <input type="submit" value="ピアツーピア発信" data-icon="arrow-r" data-iconpos="right" />
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div data-role="page" data-theme="b">  
+  <div data-role="header" data-position="inline">
+    <h1>GPS機能</h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back">
+      GPS機能一覧
+    </a>
+  </div>
+
+  <div data-role="content">
+
+    <p>◯現在地から「東京スカイツリー」までの距離</p>
+    <p>約<%= @dis %>km</p>
+    
+    <p>◯Rhodes MapViewを使ったサンプルです</p>
+    <form method="GET" action="<%= url_for :action => :map_view %>">
+      <div data-role="fieldcontain">
+        <label for="provider">マップのプロバイダー</label>
+        <select name="provider" id="provider">
+          <option value="RhoGoogle">RhoGoogle(Androind,WMのみ)
+          <option value="ESRI">ESRI
+          <option value="OSM">OSM(Android,WMのみ)
+        </select>
+      </div>
+      
+      <div data-role="fieldcontain">
+        <label for="map_type">マップの種類</label>
+        <select name="map_type" id="map_type">
+          <option value="standard">標準
+          <option value="satellite">衛生
+          <option value="hybrid">標準 + 衛生
+        </select>
+      </div>
+      <input type="submit" value="マップ起動" data-icon="arrow-r" data-iconpos="right" />
+    </form>
+    
+  </div>
+
+</div>

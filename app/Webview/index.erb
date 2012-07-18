@@ -1,0 +1,30 @@
+<script type="text/javascript">
+<!--
+function webalert(){
+  alert("コントローラーからjavascriptが呼び出されました");
+}
+-->
+</script>
+
+<div data-role="page" data-theme="b">
+	<div data-role="header" data-position="inline">
+    <h1>Web機能</h1>
+    <a href="<%= Rho::RhoConfig.start_path %>" class="ui-btn-left" data-icon="home" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+      機能リストへ
+    </a>
+	</div>
+
+  <div data-role="content">
+    <a href="<%= url_for :action => :refresh %>" data-role="button">画面を更新</a>
+    <a href="<%= url_for :action => :navigate %>" data-role="button">画面を移動(機能リスト一覧へ)</a>
+    <a href="<%= url_for :action => :location %>" data-role="button">現在のURL表示</a>
+    <a href="<%= url_for :action => :call_js %>" data-role="button">JavaScriptの呼び出し</a>
+    <a href="<%= url_for :action => :get_tab %>" data-role="button">タブのインデックスを取得</a>
+    <% unless $full_screen %> 
+      <a href="<%= url_for :action => :full_screen, :query => {:mode => 1}%>" data-role="button">フルスクリーンモード有効</a>
+    <% else %>
+      <a href="<%= url_for :action => :full_screen, :query => {:mode => 0}%>" data-role="button">フルスクリーンモード無効</a>
+    <% end %>
+  </div>
+
+</div>

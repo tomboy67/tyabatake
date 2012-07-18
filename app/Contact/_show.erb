@@ -1,0 +1,35 @@
+<div data-role="collapsible" data-theme="b">
+  <h3>共通項目</h3>
+
+  <ul data-role="listview">
+    <li>
+      <div class="itemLabel">姓</div>
+      <div class="itemValue"><%= @contact["last_name"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">名</div>
+      <div class="itemValue"><%= @contact["first_name"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">携帯電話番号</div>
+      <div class="itemValue"><%= @contact["mobile_number"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">(仕事)電話番号</div>
+      <div class="itemValue"><%= @contact["business_number"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">E-メールアドレス</div>
+      <div class="itemValue"><%= @contact["email_address"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">会社名</div>
+      <div class="itemValue"><%= @contact["company_name"] %></div>
+    </li>
+  </ul>
+</div>

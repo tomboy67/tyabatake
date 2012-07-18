@@ -1,0 +1,21 @@
+<div data-role="page" data-theme="b">
+
+	<div data-role="header" data-position="inline">
+    <h1>イベント一覧</h1>
+    <a href="<%= url_for(:action => :index) %>" class="ui-btn-left" data-icon="home" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+      メニューへ
+    </a>
+	</div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      <% @events.each do |event| %>
+        <li>
+          <a href="<%= url_for :action => :show, :id => event["id"] %>">
+            <%= event["title"] %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

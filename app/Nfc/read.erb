@@ -1,0 +1,74 @@
+<div data-role="page" data-theme="b">
+
+  <div data-role="header" data-position="inline">
+    <h1>Nfc機能(リーダー)</h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+      Nfc機能トップへ
+    </a>
+  </div>
+
+  <div data-role="content">
+  
+    <div data-role="fieldcontain">
+      <label for="id">NfcのIDm:</label>
+      <input type="text" name="id" id="id" class="nfc" value=""  />
+    </div>
+    
+    <div data-role="fieldcontain">
+      <label for="tech">テクノロジー:</label>
+      <input type="text" name="tech" id="tech" class="nfc" value=""  />
+    </div>
+      
+    <div data-role="fieldcontain">
+      <label for="manufacturer">製造業者バイトコード:</label>
+      <input type="text" name="manufacturer" id="manufacturer" class="nfc" value=""  />
+    </div>
+      
+    <div data-role="fieldcontain">
+      <label for="system">システムコード:</label>
+      <input type="text" name="system" id="system" class="nfc" value=""  />
+    </div>
+      
+    <div data-role="fieldcontain">
+      <label for="message_byte">NdefMessageのバイトコード:</label>
+      <input type="text" name="message_byte" id="message_byte" class="nfc" value=""  />
+    </div>
+    
+    <div data-role="collapsible">
+      <h2>Ndef情報</h2>
+        <div data-role="fieldcontain" data-theme="b"> 
+          <label for="max_size">最大メッセージサイズ:</label> 
+          <input type="text" name="max_size" id="max_size" class="nfc" value=""  /> 
+        </div>
+        <div data-role="fieldcontain" data-theme="b"> 
+          <label for="writable">書き込み可能:</label> 
+          <input type="text" name="writable" id="writable" class="nfc" value=""  /> 
+        </div>
+        <div data-role="fieldcontain" data-theme="b"> 
+          <label for="readonly">読み込み専用設定:</label> 
+          <input type="text" name="readonly" id="readonly" class="nfc" value=""  /> 
+        </div>
+      </ul>
+    </div>
+    
+    <div data-role="collapsible">
+      <h2>NdefMessage情報</h2>
+        <div data-role="fieldcontain" data-theme="b"> 
+          <label for="type">タイプ:</label> 
+          <input type="text" name="type" id="type" class="nfc" value=""  /> 
+        </div>
+        <div data-role="fieldcontain" data-theme="b"> 
+          <label for="tnf">TNF:</label> 
+          <input type="text" name="tnf" id="tnf" class="nfc" value=""  /> 
+        </div>
+        <div data-role="fieldcontain" data-theme="b">  
+          <label for="rtd">RTD:</label> 
+          <input type="text" name="rtd" id="rtd" class="nfc" value=""  /> 
+        </div>
+        <div data-role="fieldcontain" data-theme="b">  
+          <label for="payload">メッセージ:</label> 
+          <input type="text" name="payload" id="payload" class="nfc" value=""  /> 
+        </div>
+      </ul>
+    </div>
+</div>

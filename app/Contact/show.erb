@@ -1,0 +1,25 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>詳細</h1>
+    <a href="<%= url_for :action => :list %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      一覧へ
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @contact["id"] %>" class="ui-btn-right" data-icon="star">
+      編集
+    </a>
+  </div>
+
+  <div data-role="content">
+    <%= render(:partial => "show")  %>
+    <%
+      case System::get_property('platform')
+      when "APPLE"
+    %>
+      <%= render(:partial => "show_apple") %>
+    <% when "ANDROID" %>
+      <%= render(:partial => "show_android") %>
+    <% end %>
+  </div>
+
+</div>

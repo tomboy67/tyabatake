@@ -1,0 +1,37 @@
+name: "tyabatake"
+version: "1.0"
+vendor: "rhomobile"
+build: "debug"
+bbver: "4.6"
+applog: "rholog.txt"
+iphone:
+  configuration: "Release"
+  sdk: "iphonesimulator5.0"
+  provisionprofile: 
+  codesignidentity: 
+  entitlements: 
+  BundleIdentifier: "com.rhomobile.tyabatake"
+  BundleURLScheme: "tyabatake"
+  emulatortarget: "ipad"
+wp:
+  productid: "1ad77190-a3e9-012f-2502-3c07542aa8a3"
+symbian:
+  uid: "0xe1965687"
+android:
+  version: "4.0"
+  extensions:
+    - nfc
+    - barcode
+extensions:
+  - json
+  - another-extension
+capabilities:
+  - gps
+  - camera
+  - vibrate
+  - bluetooth
+  - non_motorola_device
+  - native_browser
+  - pim
+  - calendar
+app_type: "rhoelements"

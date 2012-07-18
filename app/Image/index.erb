@@ -1,0 +1,95 @@
+<div data-role="page" data-theme="b">
+
+	<div data-role="header" data-position="inline">
+    <h1>カメラ撮影機能</h1>
+    <a href="<%= Rho::RhoConfig.start_path %>" class="ui-btn-left" data-icon="home" data-direction="reverse" >
+      機能リストへ
+    </a>
+	</div>
+
+  <div data-role="content">
+    <a href="<%= url_for :action => :choose_picture %>" data-role="button">端末から画像データの取り込み</a>
+    
+    <% if System::get_property('has_camera') %>
+      <% if (System::get_property('platform') == 'ANDROID') || (System::get_property('platform') == 'APPLE') %>
+        <p>メインカメラ:<%= @camera_main %></p>
+        <p>前面カメラ:<%= @camera_front %></p>
+
+        <form method="GET" action="<%= url_for :action => :on_take %>">
+        
+          <div data-role="fieldcontain">
+            <label for="camera_type">カメラの種類</label>
+            <select name="camera_type" id="camera_type">
+              <option value="main">メインカメラ
+              <option value="front">前面カメラ
+            </select>
+          </div>
+            
+          <div data-role="fieldcontain">
+            <label for="color_model">撮影方法</label>  
+            <select name="color_model" id="color_model">
+              <option value="RGB">カラー撮影
+              <option value="Grayscale">白黒撮影
+            </select>
+          </div>
+          
+          <div data-role="fieldcontain">
+            <label for="preferred_size">サイズ</label>
+            <select name="preferred_size" id="preferred_size">
+              <option value="original">指定しない
+              <option value="one">1000×1000
+              <option value="two">100×100
+              <option value="three">640×480
+            </select>
+          </div>
+          
+          <div data-role="fieldcontain">
+            <label for="format">フォーマット</label>
+            <select name="format" id="format">
+              <option value="jpg">JPG形式
+              <option value="png">PNG形式
+            </select>
+          </div>
+          
+          <% if System::get_property('platform') == 'ANDROID' %>
+            <div data-role="fieldcontain">
+              <label for="flash">フラッシュモード</label>
+              <select name="flash" id="flash">
+                <option value="auto">オート
+                <option value="on">オン
+                <option value="off">オフ
+                <option value="red-eye">赤目軽減
+                <option value="torch">トーチ
+              </select>
+            </div>
+          <% end %>
+          
+          <% if System::get_property('platform') == 'APPLE' %>
+            <div data-role="fieldcontain">
+              <label for="enable_editing">編集モード</label>
+              <select name="enable_editing" id="enable_editing">
+                <option value="enable">有効
+                <option value="disable">無効
+              </select>
+            </div>
+          <% end %>
+          
+          <input type="submit" value="カメラ起動" data-icon="arrow-r" data-iconpos="right" />
+          
+        </form>
+      <% else %>
+        <a href="<%= url_for :action => :on_take %>" data-role="button">カメラ起動</a>
+      <% end %>
+    <% end %>
+    
+    <% @images.reverse_each do |image| %>
+      <% if image.image_uri %>
+        <div>
+          <img src="<%=Rho::RhoApplication::get_blob_path(image.image_uri)%>" width='300px'></img>
+          <a href="<%= url_for :action => :destroy, :id => image.object %>" data-role="button" data-icon="delete">削除</a>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>

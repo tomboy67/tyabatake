@@ -1,0 +1,32 @@
+<div data-role="collapsible" data-theme="b">
+  <h3>共通入力項目</h3>
+  <div data-role="fieldcontain">
+    <label for="contact[last_name]" class="fieldLabel">姓</label>
+    <input type="text" id="contact[last_name]" name="contact[last_name]" <%= placeholder("姓") %> value="<%= @contact["last_name"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[first_name]" class="fieldLabel">名</label>
+    <input type="text" id="contact[first_name]" name="contact[first_name]" <%= placeholder("名") %> value="<%= @contact["first_name"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[mobile_number]" class="fieldLabel">携帯電話番号</label>
+    <input type="text" id="contact[mobile_number]" name="contact[mobile_number]" <%= placeholder("携帯電話番号") %> value="<%= @contact["mobile_number"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[business_number]" class="fieldLabel">(仕事)電話番号</label>
+    <input type="text" id="contact[business_number]" name="contact[business_number]" <%= placeholder("(仕事)電話番号") %> value="<%= @contact["business_number"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[email_address]" class="fieldLabel">E-メールアドレス</label>
+    <input type="text" id="contact[email_address]" name="contact[email_address]" <%= placeholder("E-メールアドレス") %> value="<%= @contact["email_address"] %>"/>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="contact[company_name]" class="fieldLabel">会社名</label>
+    <input type="text" id="contact[company_name]" name="contact[company_name]" <%= placeholder("会社名") %> value="<%= @contact["company_name"] %>"/>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div data-role="page" data-theme="b">
+
+  <div data-role="header" data-position="inline">
+    <h1>Nfc機能(ピアツーピア)</h1>
+    <a href="<%= url_for :action => :stop_nfc %>" class="ui-btn-left" data-icon="delete" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+      キャンセル
+    </a>
+  </div>
+
+  <div data-role="content">
+    <p>タグをシェアしています。</p>
+    <p>Nfc対応端末同士を近づけると、タグの送信が行えます。</p>
+  </div>
+</div>

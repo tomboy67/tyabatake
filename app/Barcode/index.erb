@@ -1,0 +1,14 @@
+<div data-role="page" data-theme="b">
+
+	<div data-role="header" data-position="inline">
+    <h1>バーコードスキャン機能</h1>
+    <a href="<%= Rho::RhoConfig.start_path %>" class="ui-btn-left" data-icon="home" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+      機能リストへ
+    </a>
+	</div>
+
+  <div data-role="content">
+    <a href="<%= url_for :action => :take_barcode %>" data-role="button" data-ajax="false" >バーコードスキャン</a>
+  </div>
+
+</div>

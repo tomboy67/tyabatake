@@ -1,0 +1,32 @@
+<div data-role="page" data-theme="b">
+
+	<div data-role="header" data-position="inline">
+    <h1>電話帳一覧</h1>
+    <a href="<%= url_for(:action => :index) %>" class="ui-btn-left" data-icon="home" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+      メニューへ
+    </a>
+	</div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      <% case platform
+        when "apple" %>
+          <% @contacts.each do |key, contact| %>
+            <li>
+              <a href="<%= url_for :action => :show, :id => contact["id"] %>">
+                <%= contact["last_name"] %> <%= contact["first_name"] %>
+              </a>
+            </li>
+          <% end %>
+      <% when "android" %>
+        <% @contacts.each do |key, contact| %>
+          <li>
+            <a href="<%= url_for :action => :show, :id => contact["id"] %>">
+              <%= contact["display_name"] %>
+            </a>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>

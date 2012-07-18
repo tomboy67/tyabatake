@@ -1,0 +1,22 @@
+<div data-role="page" data-theme="b">
+
+  <div data-role="header" data-position="inline">
+    <h1>Nfc機能</h1>
+    <a href="<%= Rho::RhoConfig.start_path %>" class="ui-btn-left" data-icon="home" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+      機能リストへ
+   </a>
+  </div>
+
+  <div data-role="content">
+    <div data-role="fieldcontain">
+      <label for="id">Nfc機能:</label>
+      <input type="text" name="id" id="id" value="<%= @support %>" />
+    </div>
+    <% if @support %>
+      <a href="<%= url_for :action => :read %>" data-role="button">タグを読み込む</a>
+      <a href="<%= url_for :action => :write %>" data-role="button">タグを書き込む</a>
+      <a href="<%= url_for :action => :peer_to_peer %>" data-role="button">P2P通信をする(タグのシェア)</a>
+    <% end %>
+  </div>
+
+</div>

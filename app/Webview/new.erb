@@ -1,0 +1,25 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @webview.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @webview.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="webview[aaaa]" class="fieldLabel">Aaaa</label>
+            <input type="text" id="webview[aaaa]" name="webview[aaaa]" <%= placeholder("Aaaa") %> />
+          </div>
+      
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

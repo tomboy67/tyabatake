@@ -1,0 +1,93 @@
+<input type="hidden" name="event[<%= Rho::RhoEvent::ID %>]" value="<%= @event[Rho::RhoEvent::ID] unless @event.nil? %>" />
+
+<div data-role="fieldcontain">
+  <label for="event[<%= Rho::RhoEvent::TITLE %>]" class="fieldLabel">タイトル</label>
+  <input type="text" id="event[<%= Rho::RhoEvent::TITLE %>]" name="event[<%= Rho::RhoEvent::TITLE %>]" <%= placeholder("タイトル") %> value="<%= @event[Rho::RhoEvent::TITLE] %>"/>
+</div>
+
+<div data-role="fieldcontain">
+  <label for="event[<%= Rho::RhoEvent::LOCATION %>]" class="fieldLabel">場所</label>
+  <input type="text" id="event[<%= Rho::RhoEvent::LOCATION %>]" name="event[<%= Rho::RhoEvent::LOCATION %>]" <%= placeholder("場所") %> value="<%= @event[Rho::RhoEvent::LOCATION] %>" />
+</div>
+
+<div data-role="fieldcontain">
+  <label for="event[<%= Rho::RhoEvent::NOTES %>]" class="fieldLabel">メモ</label>
+  <input type="text" id="event[<%= Rho::RhoEvent::NOTES %>]" name="event[<%= Rho::RhoEvent::NOTES %>]" <%= placeholder("メモ") %> value="<%= @event[Rho::RhoEvent::NOTES] %>" />
+</div>
+
+<div data-role="fieldcontain">
+  <label for="event[<%= Rho::RhoEvent::START_DATE %>]" class="fieldLabel">開始日</label>
+  <input type="text" id="<%= Rho::RhoEvent::START_DATE %>" 
+         name="event[<%= Rho::RhoEvent::START_DATE %>]"
+         readonly <%= placeholder("開始日") %>
+         value="<%= @event[Rho::RhoEvent::START_DATE] %>"
+         onClick="choseDateTimeAJPicker('開始日の選択', '<%= Rho::RhoEvent::START_DATE %>');" />
+</div>
+
+<div data-role="fieldcontain">
+  <label for="event[<%= Rho::RhoEvent::END_DATE %>]" class="fieldLabel">終了日</label>
+  <input type="text" id="<%= Rho::RhoEvent::END_DATE %>" 
+         name="event[<%= Rho::RhoEvent::END_DATE %>]"
+         readonly <%= placeholder("終了日") %>
+         value="<%= @event[Rho::RhoEvent::END_DATE] %>"
+         onClick="choseDateTimeAJPicker('終了日の選択', '<%= Rho::RhoEvent::END_DATE %>');" />
+</div>
+
+<!--
+  現状主催者項目の入力が効かないのでコメントアウト
+<div data-role="fieldcontain">
+  <label for="event[<%= Rho::RhoEvent::ORGANIZER %>]" class="fieldLabel">主催者</label>
+  <select id="event[<%= Rho::RhoEvent::ORGANIZER %>]" name="event[<%= Rho::RhoEvent::ORGANIZER %>]" >
+    <% @contacts.each do |key, contact| %>
+      <%
+        case platform
+        when "apple"
+          name = contact["last_name"] + contact["first_name"]
+        when "android"
+          name = contact["display_name"]
+        end
+      %>
+
+      <option value="<%= strip_braces(key) %>" <%= "selected='selected'" if @event[Rho::RhoEvent::ORGANIZER] == name %>><%= name %></option>
+    <% end %>
+  </select>
+</div>
+-->
+
+<div data-role="collapsible" data-theme="b">
+  <h3>繰り返し</h3>
+  <div data-role="fieldcontain">
+    <label for="event[<%= Rho::RhoEvent::RECURRENCE %>][<%= Rho::RhoEvent::RECURRENCE_FREQUENCY %>]" class="fieldLabel">繰り返し</label>
+    <select id="event[<%= Rho::RhoEvent::RECURRENCE %>][<%= Rho::RhoEvent::RECURRENCE_FREQUENCY %>]" name="event[<%= Rho::RhoEvent::RECURRENCE %>][<%= Rho::RhoEvent::RECURRENCE_FREQUENCY %>]" >
+      <% Event::RECURRENCE_FREQUENCIES.each do|k, v| %>
+        <option value="<%= k %>" <%= "selected='selected'" if @event[Rho::RhoEvent::RECURRENCE] && @event[Rho::RhoEvent::RECURRENCE][Rho::RhoEvent::RECURRENCE_FREQUENCY] == k %>><%= v %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="event[<%= Rho::RhoEvent::RECURRENCE %>][<%= Rho::RhoEvent::RECURRENCE_INTERVAL %>]" class="fieldLabel">間隔</label>
+    <input type="number" name="event[<%= Rho::RhoEvent::RECURRENCE %>][<%= Rho::RhoEvent::RECURRENCE_INTERVAL %>]"
+           value="<%= @event[Rho::RhoEvent::RECURRENCE][Rho::RhoEvent::RECURRENCE_INTERVAL] unless @event[Rho::RhoEvent::RECURRENCE].nil? %>" />
+  </div>
+
+  <div data-role="fieldcontain">
+    <label for="event[<%= Rho::RhoEvent::RECURRENCE %>][<%= Rho::RhoEvent::RECURRENCE_END %>]" class="fieldLabel">終了日</label>
+    <input type="text" id="<%= Rho::RhoEvent::RECURRENCE %>_<%= Rho::RhoEvent::RECURRENCE_END %>"
+           name="event[<%= Rho::RhoEvent::RECURRENCE %>][<%= Rho::RhoEvent::RECURRENCE_END %>]"
+           value="<%= @event[Rho::RhoEvent::RECURRENCE][Rho::RhoEvent::RECURRENCE_END] unless @event[Rho::RhoEvent::RECURRENCE].nil? %>"
+           readonly <%= placeholder("終了日") %>
+           onClick="choseDateTimeAJPicker('終了日', '<%= Rho::RhoEvent::RECURRENCE %>_<%= Rho::RhoEvent::RECURRENCE_END %>');" />
+  </div>
+</div>
+
+<script type="text/javascript">
+  function setFieldValue(field, value) {
+    document.getElementById(field).value=value;
+  }
+
+  function choseDateTimeAJPicker(title, field_key) {
+    $.get('<%= url_for(:action => :choose_date) %>', { title: title, field_key: field_key });
+    return false;
+  }
+</script>

@@ -1,0 +1,28 @@
+<div data-role="page" data-theme="b">
+
+	<div data-role="header" data-position="inline">
+    <h1>タブバー機能</h1>
+    <a href="<%= Rho::RhoConfig.start_path %>" class="ui-btn-left" data-icon="home" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+      機能リストへ
+    </a>
+	</div>
+
+  <div data-role="content">
+    <% unless $tab_active %>
+      <a href="<%= url_for :action => :create_tabbar %>" data-role="button">タブバーを作成</a>
+      <% if platform == 'android' %>
+        <a href="<%= url_for :action => :create_tabbar, :query => {:bottom => true} %>" data-role="button">タブバーを作成(下部)</a>
+      <% elsif platform == 'apple' %>
+        <a href="<%= url_for :action => :create_tabbar, :query => {:tab_type => 'ipad'} %>" data-role="button">iPad用タブバー作成(iPadのみ)</a>
+      <% end %>
+    <% else %>
+      <a href="<%= url_for :action => :tab_index %>" data-role="button">タブインデックスを取得</a>
+      <a href="<%= url_for :action => :remove_tabbar %>" data-role="button">タブバーを削除</a>
+      <div data-role="controlgroup">
+        <a href="<%= url_for :action => :switch_tab, :id => "0" %>" data-role="button">1番目のタブに移動</a>
+        <a href="<%= url_for :action => :switch_tab, :id => "1" %>" data-role="button">2番目のタブに移動</a>
+        <a href="<%= url_for :action => :switch_tab, :id => "2" %>" data-role="button">3番目のタブに移動</a>
+      </div>
+    <% end %>
+  </div>
+</div>

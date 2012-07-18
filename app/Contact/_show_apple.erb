@@ -1,0 +1,194 @@
+<div data-role="collapsible" data-theme="b">
+  <h3>iOSの項目</h3>
+
+  <ul data-role="listview">
+    <li>
+      <div class="itemLabel">敬称(前)</div>
+      <div class="itemValue"><%= @contact["prefix"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">ミドルネーム</div>
+      <div class="itemValue"><%= @contact["middle_name"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">敬称(後)</div>
+      <div class="itemValue"><%= @contact["suffix"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">ニックネーム</div>
+      <div class="itemValue"><%= @contact["nickname"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">誕生日</div>
+      <div class="itemValue"><%= @contact["birthday"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">記念日</div>
+      <div class="itemValue"><%= @contact["anniversary"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">作成日</div>
+      <div class="itemValue"><%= @contact["created"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">更新日</div>
+      <div class="itemValue"><%= @contact["updated"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">役職</div>
+      <div class="itemValue"><%= @contact["job_title"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">秘書名</div>
+      <div class="itemValue"><%= @contact["assistant_name"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">秘書電話番号</div>
+      <div class="itemValue"><%= @contact["assistant_number"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">配偶者名</div>
+      <div class="itemValue"><%= @contact["spouse_name"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">メモ</div>
+      <div class="itemValue"><%= @contact["person_note"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">自宅E-メール</div>
+      <div class="itemValue"><%= @contact["home_email_address"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">その他E-メール</div>
+      <div class="itemValue"><%= @contact["other_email_address"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">ホームページURL</div>
+      <div class="itemValue"><%= @contact["home_page"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">ポケットベル番号</div>
+      <div class="itemValue"><%= @contact["pager_number"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">自宅FAX</div>
+      <div class="itemValue"><%= @contact["home_fax"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">会社FAX</div>
+      <div class="itemValue"><%= @contact["work_fax"] %></div>
+    </li>
+
+  </ul>
+</div>
+
+<div data-role="collapsible" data-theme="b">
+  <h3>仕事用住所追加項目</h3>
+
+  <ul data-role="listview">
+    <li>
+      <div class="itemLabel">国名</div>
+      <div class="itemValue"><%= @contact["contry_1"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">郵便番号</div>
+      <div class="itemValue"><%= @contact["zip_1"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">都道府県</div>
+      <div class="itemValue"><%= @contact["state_1"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">市区町村区</div>
+      <div class="itemValue"><%= @contact["city_1"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">住所</div>
+      <div class="itemValue"><%= @contact["street_address_1"] %></div>
+    </li>
+  </ul>
+</div>
+
+<div data-role="collapsible" data-theme="b">
+  <h3>自宅用住所追加項目</h3>
+
+  <ul data-role="listview">
+    <li>
+      <div class="itemLabel">国名</div>
+      <div class="itemValue"><%= @contact["contry_2"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">郵便番号</div>
+      <div class="itemValue"><%= @contact["zip_2"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">都道府県</div>
+      <div class="itemValue"><%= @contact["state_2"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">市区町村区</div>
+      <div class="itemValue"><%= @contact["city_2"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">住所</div>
+      <div class="itemValue"><%= @contact["street_address_2"] %></div>
+    </li>
+  </ul>
+</div>
+
+<div data-role="collapsible" data-theme="b">
+  <h3>その他住所追加項目</h3>
+
+  <ul data-role="listview">
+    <li>
+      <div class="itemLabel">国名</div>
+      <div class="itemValue"><%= @contact["contry_3"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">郵便番号</div>
+      <div class="itemValue"><%= @contact["zip_3"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">都道府県</div>
+      <div class="itemValue"><%= @contact["state_3"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">市区町村区</div>
+      <div class="itemValue"><%= @contact["city_3"] %></div>
+    </li>
+
+    <li>
+      <div class="itemLabel">住所</div>
+      <div class="itemValue"><%= @contact["street_address_3"] %></div>
+    </li>
+  </ul>
+</div>
